@@ -1,7 +1,8 @@
 const verticalConfig = {
   id: "doineedlegalhelp",
   name: "DoINeedLegalHelp.org",
-  domain: "doineedlegalhelp.org",
+  domain: "www.doineedlegalhelp.org",
+  displayDomain: "doineedlegalhelp.org",
   tagline: "Free and low-cost legal help.",
   description:
     "Nonprofit legal aid, pro bono attorneys, and EOIR-recognized immigration organizations across the United States.",
