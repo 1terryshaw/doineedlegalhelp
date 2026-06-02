@@ -13,7 +13,7 @@ export default function AboutPage() {
       <header>
         <h1 className="text-3xl font-bold mb-3">About {verticalConfig.name}</h1>
         <p className="text-lg text-gray-700">
-          A directory of nonprofit and low-cost legal resources across the United States.
+          A directory of nonprofit and low-cost legal resources near you.
         </p>
       </header>
 

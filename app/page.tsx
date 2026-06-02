@@ -61,7 +61,7 @@ export default async function HomePage() {
           </h1>
           <p className="text-lg opacity-90 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Nonprofit legal aid, pro bono attorneys, and EOIR-recognized immigration
-            organizations across the United States. Information only &mdash; this is not legal
+            organizations near you. Information only &mdash; this is not legal
             advice.
           </p>
         </div>
