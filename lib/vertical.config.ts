@@ -5,7 +5,7 @@ const verticalConfig = {
   displayDomain: "doineedlegalhelp.org",
   tagline: "Free and low-cost legal help.",
   description:
-    "Nonprofit legal aid, pro bono attorneys, and EOIR-recognized immigration organizations across the United States.",
+    "Nonprofit legal aid, pro bono attorneys, and EOIR-recognized immigration organizations near you.",
 
   entityName: "Lawyer",
   entityNamePlural: "Lawyers",
