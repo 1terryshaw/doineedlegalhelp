@@ -60,10 +60,6 @@ export default async function DirectoryPage({
         <SearchBar variant="directory" defaultQ={q} defaultType={listing_type} defaultRegion={region} defaultCity={cityFilter} regions={runtimeRegions.length > 0 ? runtimeRegions : undefined} />
       </div>
 
-      <p className="text-gray-600 mb-4">
-        {formatCount(totalCount)} {totalCount === 1 ? verticalConfig.listingNoun : verticalConfig.listingNounPlural}
-        {hasFilters ? " matching your filters" : " in our directory"}.
-      </p>
 
       {hasFilters && (
         <div className="flex flex-wrap gap-2 mb-6">
