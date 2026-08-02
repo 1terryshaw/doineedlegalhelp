@@ -5,9 +5,13 @@ import { getListings, getFilteredListingsCount } from "@/lib/supabase";
 import { getRegionBySlug, REGIONS, formatCount } from "@/lib/constants";
 import ListingCard from "@/components/ListingCard";
 import ShareButtons from "@/components/pizzazz/ShareButtons";
-import { regionBreadcrumbSchema, regionCollectionPageSchema } from "@/lib/seo";
+import FaqSection from "@/components/FaqSection";
+import { regionBreadcrumbSchema, regionCollectionPageSchema, localizeFaqs } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
+
+const LEGAL_DISCLAIMER =
+  "The information here is for informational purposes only and is not legal advice. Consult a licensed attorney in your jurisdiction about your specific situation.";
 
 interface Props {
   params: Promise<{ region: string }>;
@@ -65,6 +69,8 @@ export default async function RegionPage({ params }: Props) {
           ))}
         </div>
       )}
+
+      <FaqSection faqs={localizeFaqs(verticalConfig.faqs, regionData.name)} disclaimer={LEGAL_DISCLAIMER} />
     </div>
   );
 }
