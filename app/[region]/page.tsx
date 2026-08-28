@@ -4,7 +4,6 @@ import verticalConfig from "@/lib/vertical.config";
 import { getListings, getFilteredListingsCount } from "@/lib/supabase";
 import { getRegionBySlug, REGIONS, formatCount } from "@/lib/constants";
 import ListingCard from "@/components/ListingCard";
-import ShareButtons from "@/components/pizzazz/ShareButtons";
 import FaqSection from "@/components/FaqSection";
 import { regionBreadcrumbSchema, regionCollectionPageSchema, localizeFaqs } from "@/lib/seo";
 
@@ -51,9 +50,6 @@ export default async function RegionPage({ params }: Props) {
       <h1 className="text-3xl font-bold mb-2">
         {verticalConfig.listingNounPlural} in {regionData.name}
       </h1>
-      <div className="mb-4">
-        <ShareButtons variant="compact" title={`${verticalConfig.name} — Directory`} />
-      </div>
       <p className="text-gray-600 mb-8">
         Browse {formatCount(totalCount)} {totalCount === 1 ? verticalConfig.listingNoun : verticalConfig.listingNounPlural} in {regionData.name}, {regionData.province}.
       </p>
