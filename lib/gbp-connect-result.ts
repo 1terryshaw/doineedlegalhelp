@@ -22,13 +22,13 @@ const TEMPORARY_STATUS = new Set([429, 502, 503, 504]);
 
 export function gbpConnectResult(
   status: number,
-  data: { ok?: boolean; placeId?: unknown; chij?: unknown; error?: unknown; message?: unknown } | null,
+  data: { ok?: boolean; placeId?: unknown; chij?: unknown; initialRating?: unknown; error?: unknown; message?: unknown } | null,
 ): { outcome: GbpConnectOutcome; message: string } {
   const d = data ?? {};
   // Success needs a parsed body with a real place id — never label a half-response "connected".
   if (status >= 200 && status < 300 && data && d.ok !== false && typeof d.placeId === "string" && d.placeId) {
     if (d.placeId.startsWith("ChIJ")) {
-      return { outcome: "connected_review_ready", message: "✓ Google connected. Your Google rating can show on your listing." };
+      return { outcome: "connected_review_ready", message: d.initialRating === "initial_rating_written" /* P2d */ ? "✓ Google connected. Your Google rating is now showing on your listing." : "✓ Google connected. Your Google rating can show on your listing." };
     }
     if (d.chij === "refused_collision") {
       return {
