@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { Metadata } from "next";
 import { verifyOwnerAccess } from "@/lib/auth";
 import OwnerDashboard from "@/components/OwnerDashboard";
+import { TIER_ORDER } from "@/lib/pricing-canonical";
 import ReviewShowcase from "@/components/ReviewShowcase";
 import HealthScore from "@/components/HealthScore";
 import { listPhotosForListing } from "@/lib/listing-photos";
@@ -54,7 +55,7 @@ export default async function OwnerDashboardPage({ params }: Props) {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
-      <OwnerDashboard listing={listing} reviewSlot={reviewSlot} healthSlot={healthSlot} />
+      <OwnerDashboard listing={listing} hostOffer={{ leadsPlus: false, website: TIER_ORDER.some((id) => id.startsWith("website")) }} reviewSlot={reviewSlot} healthSlot={healthSlot} />
     </div>
   );
 }
