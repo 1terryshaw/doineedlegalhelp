@@ -435,6 +435,7 @@ export default async function ListingPage({ params }: Props) {
       </div>
       <FaqSection faqs={localizeFaqs(verticalConfig.faqs, listing.city)} disclaimer={LEGAL_DISCLAIMER} />
       <UpgradeModal
+        country={listing.country}
         listingSlug={listing.slug}
         priceIds={{
           reviews_plus_monthly: process.env.STRIPE_PRICE_REVIEWS_MONTHLY || "",
